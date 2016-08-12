@@ -1,16 +1,16 @@
 import { Component } from 'angular2/core';
 import { Meal } from './meal.model';
+import { MealDisplayComponent } from './meal-display.component';
 
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
+  directives: [MealDisplayComponent],
   template: `
-  <div *ngFor="#meal of mealList">
-    <h3>{{meal.name}} - {{meal.description}}</h3>
-    <h4>Calories: {{meal.calories}}
-  </div>
+  <meal-display *ngFor="#currentmeal of mealList" [meal]='currentmeal'>
+  </meal-display>
   `
 })
-export class mealListComponent {
+export class MealListComponent {
 
 }
