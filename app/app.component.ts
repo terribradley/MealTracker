@@ -6,8 +6,9 @@ import { MealListComponent } from './meal-list.component';
   selector: 'my-app',
   directives: [MealListComponent],
   template: `
-    <h1>Meal Tracker app goes here</h1>
+  <div class="main-content">
     <meal-list [mealList]="meals"></meal-list>
+  </div>
   `
 })
 export class AppComponent {

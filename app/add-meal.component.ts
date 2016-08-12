@@ -4,13 +4,15 @@ import { Meal } from './meal.model';
   selector: 'add-meal',
   outputs:['onSubmitNewMeal'],
   template:`
-  <h1>Add another Meal</h1>
-  <div class='meal-form '>
-    <input placeholder="Name" #newName>
-    <input placeholder="Meal Description" #newDescription>
-    <input placeholder="Calories" #newCalories>
-    <button (click)="addMeal(newName, newDescription, newCalories)">Add</button>
-  </div>
+  <section class="add">
+    <h1>Add Your Meals for the Day</h1>
+    <form class="add-meal-form">
+      <input placeholder="Name" #newName>
+      <input placeholder="Meal Description" #newDescription>
+      <input placeholder="Calories" #newCalories>
+      <button (click)="addMeal(newName, newDescription, newCalories)">Add</button>
+    </form>
+  </section>
   `
 })
 
