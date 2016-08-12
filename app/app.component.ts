@@ -1,21 +1,21 @@
 import { Component } from 'angular2/core';
-import { Keg } from './keg.model';
-import { KegListComponent } from './keg-list.component';
+import { Meal } from './meal.model';
+import { MealListComponent } from './keg-list.component';
 
 @Component({
   selector: 'my-app',
-  directives: [KegListComponent],
+
   template: `
-    <h1>Taproom app goes here</h1>
-    <keg-list [kegList]="kegs"></keg-list>
+    <h1>Meal Tracker app goes here</h1>
+    <meal-list [mealList]="meals"></keg-list>
   `
 })
 export class AppComponent {
-  public kegs: Keg[];
+  public meals: Meal[];
   constructor() {
-    var newKeg = new Keg("Anchor Steam", "Anchor Brewing", 5, 5);
-    var newKeg2 = new Keg("Farmhouse Ale", "Commons Brewery", 4, 6);
-    var newKeg3 = new Keg("Devil's Kriek", "Double Mountain", 8, 8);
-    this.kegs = [newKeg, newKeg2, newKeg3];
+    var newMeal = new Meal("Hamburger", "Ate all of it, no fries", 700);
+    var newMeal2 = new Meal("Salad with Chicken", "Mix greens with roasted chicken, peas, and balsamic dressing", 400);
+    var newMeal3 = new Meal("Salmon, Rice Veges", "Steamed Salmon, brown rice, grilled asparagus", 550);
+    this.meals = [newMeal, newMeal2, newMeal3];
   }
 }
