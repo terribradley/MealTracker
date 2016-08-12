@@ -10,9 +10,15 @@ import { AddMealComponent } from './add-meal.component';
   // pipes: [CalorieAmountPipe],
   directives: [MealDisplayComponent, AddMealComponent],
   template: `
-    <add-meal (onSubmitNewMeal)="createMeal($event)"></add-meal>
-    <meal-display *ngFor="#currentmeal of mealList" [meal]='currentmeal'>
-    </meal-display>
+      <add-meal (onSubmitNewMeal)="createMeal($event)"></add-meal>
+      <h2>This is everything you had today</h2>
+    <section class="meal-list">
+      <meal-display *ngFor="#currentmeal of mealList" [meal]='currentmeal'>
+      </meal-display>
+    </section>
+    <section class="filter-meals">
+    
+    </section>
   `
 })
 export class MealListComponent {
