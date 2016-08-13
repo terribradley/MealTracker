@@ -7,21 +7,21 @@ import {CalorieAmountPipe} from './calorie-amount.pipe';
 @Component({
   selector: 'meal-list',
   inputs: ['mealList'],
-  // pipes: [CalorieAmountPipe],
   directives: [MealDisplayComponent, AddMealComponent],
+  pipes: [CalorieAmountPipe],
   template: `
       <add-meal (onSubmitNewMeal)="createMeal($event)"></add-meal>
       <h2>This is everything you had today</h2>
     <section class="meal-list">
-      <meal-display *ngFor="#currentmeal of mealList" [meal]="currentmeal | calorie-amount:selectedCalorieCount">
-      </meal-display>
+    <meal-display *ngFor="#currentmeal of mealList | calorie-amount:selectedCalorieCount" [meal]="currentmeal">
+    </meal-display>
     </section>
     <section class="filter-meals">
     <h3>Filter my Meals by Calories</h3>
       <select (change)="onChange($event.target.value)">
-        <option value="all">Show All</option>
+        <option value="all" selected="selected">Show All</option>
         <option value="highCalorie">Show high Calorie Meals</option>
-        <option value="lowCalorie" selected="selected">Show Low Calorie Meals</option>
+        <option value="lowCalorie">Show Low Calorie Meals</option>
       </select>
     </section>
   `
@@ -36,10 +36,3 @@ export class MealListComponent {
     this.selectedCalorieCount = optionFromMenu;
   }
 }
-
-// <meal-display *ngFor="#currentMeal of mealList | calories:filterCalories"
-//         (click)="mealClicked(currentMeal)"
-//         [class.selected]="currentMeal === selectedMeal"
-//         [meal]="currentMeal">
-//       </meal-display>
-// class.selected]="currentMeal === selectedMeal"
