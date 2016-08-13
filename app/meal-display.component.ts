@@ -25,5 +25,5 @@ export class MealDisplayComponent {
   public beingEdited: boolean = false;
   toggleEditMeal() {
    this.beingEdited = (!this.beingEdited);
- }
+  }
 }

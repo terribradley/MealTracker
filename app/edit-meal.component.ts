@@ -15,6 +15,6 @@ import { Meal } from './meal.model';
   </form>
   `
 })
-export class EditMealComponent {
 
+export class EditMealComponent {
 }

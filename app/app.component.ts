@@ -11,6 +11,7 @@ import { MealListComponent } from './meal-list.component';
   </div>
   `
 })
+
 export class AppComponent {
   public meals: Meal[];
   constructor() {
