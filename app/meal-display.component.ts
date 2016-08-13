@@ -7,7 +7,7 @@ import { EditMealComponent } from './edit-meal.component';
   inputs: ['meal'],
   directives: [EditMealComponent],
   template: `
-    <section class=meal-ist>
+    <section class="meal-list">
       <div class="meal-content">
         <h3>{{ meal.name }}</h3>
         <h4>{{ meal.description }}</h4>

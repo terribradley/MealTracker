@@ -32,7 +32,7 @@ export class MealListComponent {
   createMeal(Meal: Meal) {
     this.mealList.push(Meal);
   }
-  onChange(optionFromMenu) {
+  onChange(optionFromMenu: string) {
     this.selectedCalorieCount = optionFromMenu;
   }
 }
